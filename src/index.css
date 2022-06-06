@@ -1,0 +1,237 @@
+/*	
+	Side Navigation Menu V2, RWD
+	===================
+	Author: https://github.com/pablorgarcia
+ */
+
+ * {
+   box-sizing: border-box;
+   padding:0;
+   margin:0;
+ }
+ tr {
+  font-size: 1.5rem;
+ }
+ body {
+/*    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+font-family: 'Lato', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Roboto', sans-serif;
+   font-weight: 300;
+   line-height: 1.42em;
+   color:#A7A1AE;
+
+ }
+ .light {
+  background-color: #f4fbff;
+  width: 100%;
+  height: 100%;
+  transition: .9s;
+ }
+
+ .dark {
+  background-color:#1F2739;
+  transition: .8s;
+ }
+
+ .lightMode {
+  color : #1F2739 ;
+ }
+
+ .img-container {
+  width: 1.8rem;
+ }
+
+
+ .img-container img{
+  width: 100%;
+ }
+
+ h1 {
+   font-size:3em; 
+   font-weight: 300;
+   line-height:1em;
+   text-align: center;
+   text-transform: capitalize;
+
+   color: #4DC3FA;
+ }
+ 
+ h2 {
+   font-size:1em; 
+   font-weight: 300;
+   text-align: center;
+   display: block;
+   line-height:1em;
+   padding-bottom: 2em;
+   color: #FB667A;
+ }
+ 
+ h2 a {
+   font-weight: 700;
+   text-transform: uppercase;
+   color: #FB667A;
+   text-decoration: none;
+ }
+
+ .containerCharts {
+   height: 66rem;
+  width: 100%;
+  margin-top: 6rem;
+  padding: 2rem 0 ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ }
+
+.chart1,.chart2 {
+  margin: 2.5rem 0;
+}
+
+.chart-title {
+  margin-bottom: -2rem;
+  text-transform: capitalize;
+  color: #616161;
+}
+
+
+ .header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+ }
+
+ .header .second-section .darkMode {
+   width: 50px;
+   margin-right: 1rem;
+ }
+
+ .header .second-section .lightMode {
+  width: 50px;
+ }
+ .header .second-section .darkMode img{
+   width: 100%;
+ }
+
+ .header .second-section .lightMode img{
+  width: 100%;
+ }
+
+ .second-section {
+   display: flex;
+
+ }
+ .blue { color: #185875; }
+ .yellow { color: #FFF842; }
+ 
+ .container th h1 {
+     font-weight: bold;
+     font-size: 1em;
+   text-align: left;
+   color: #185875;
+ }
+ 
+ .container td {
+     font-weight: normal;
+     font-size: 1em;
+   -webkit-box-shadow: 0 2px 2px -2px #0E1119;
+      -moz-box-shadow: 0 2px 2px -2px #0E1119;
+           box-shadow: 0 2px 2px -2px #0E1119;
+ }
+
+ .container td.active {
+  cursor: pointer;
+ }
+
+ 
+ .container td.active:hover {
+   font-size: 28px;
+   transition: .5s;
+ }
+ 
+ .container {
+    overflow: hidden;
+    width: 91%;
+    padding: 5rem;
+    display: table;
+    margin: 0 auto;
+    padding: 3rem 0.5rem;
+ }
+ 
+ .container td, .container th {
+     padding:1rem;
+ }
+ 
+ /* Background-color of the odd rows */
+ .container tr:nth-child(odd) {
+     background-color: #323C50;
+ }
+ 
+ /* Background-color of the even rows */
+ .container tr:nth-child(even) {
+     background-color: #2C3446;
+ }
+ .second-section {
+  display: flex;
+
+}
+
+ .First-title {
+  text-transform: capitalize;
+  position: relative;
+  font-weight: bold;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+ .First-title:before {
+  position: absolute;
+  content: "";
+  width: 13%;
+  background: #00ffbf;
+  height: 3px;
+  border-radius: 4px;
+  top: 43px;
+  left: 43%;
+}
+.country-name {
+  cursor: pointer;
+}
+.country-name:hover {
+  font-size: 31px;
+}
+
+ .table-container {
+  margin-top: 3.5rem;
+ }
+ .container td:first-child { color: #FB667A; }
+ 
+ .container tr:hover {
+    background-color: #464A52;
+ -webkit-box-shadow: 0 6px 6px -6px #0E1119;
+      -moz-box-shadow: 0 6px 6px -6px #0E1119;
+           box-shadow: 0 6px 6px -6px #0E1119;
+ }
+
+ /* .container td:hover {
+
+   transition-delay: 0s;
+     transition-duration: 0.4s;
+     transition-property: all;
+   transition-timing-function: line;
+ }
+  */
+ @media (max-width: 800px) {
+ .container td:nth-child(4),
+ .container th:nth-child(4) { display: none; }
+ }
+
+ .titles {
+  background:#7b9da9 ;
+ }
+
+
+ .titles h1 {
+   cursor: pointer;
+ }
