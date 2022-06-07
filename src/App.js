@@ -16,8 +16,11 @@ function App() {
     if (theme === "dark") {
       setTheme("light");
     }
-    else
+    else {
+      
+      //document.querySelector(".img-container2").style.display = "none" ;
       setTheme("dark");
+    }
   }
 
   return (

@@ -9,7 +9,7 @@ ChartJS.register(
 )
 
 const Countryscreen = (props) => {
-    const [countryData, setcountryData] = useState() ;
+    const [countryData, setcountryData] = useState();
 
     let countryName = props.match.params.id;
 
@@ -82,7 +82,7 @@ const Countryscreen = (props) => {
             .then((allData) => {
 
                 console.log(allData);
-                setcountryData(allData) ;
+                setcountryData(allData);
                 const dateConfirmation = allData.map((obj) => {
                     return obj.Date_confirmation;
                 })
@@ -157,11 +157,15 @@ const Countryscreen = (props) => {
     return (
         <>
             <div className='containerCharts'>
-                <div className="chart1" style={{ width: '35rem', height: '25rem' }}>
-                    <Bar data={data} options={{ plugins: { legend: false } }}>Hello</Bar>
+                <h3 className='chart-title'> new Infected </h3>
+
+                <div className="chart1" style={{ width: '50rem', height: '35rem' }}>
+                    <Bar data={data} options={{ plugins: { legend: false } }}></Bar>
                 </div>
-                <div className="chart2" style={{ width: '35rem', height: '25rem' }}>
-                    <Line data={data1} options={{ plugins: { legend: false } }}>Hello</Line>
+                <h3 className='chart-title'> total Infected </h3>
+
+                <div className="chart2" style={{ width: '50rem', height: '35rem' }}>
+                    <Line data={data1} options={{ plugins: { legend: false } }}></Line>
                 </div>
             </div>
             <CountryTable countryData={countryData} countryName={countryName} />

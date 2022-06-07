@@ -9,8 +9,6 @@ ChartJS.register(
 
 function BarChar(props) {
 
-    /* console.log(props) ; */
-
     const dateConfirmation = [];
     const chartData = [];
 
@@ -19,7 +17,7 @@ function BarChar(props) {
         datasets: [
             {
                 label: false,
-                data: [50, 60, 70, 25],
+                data: [],
                 backgroundColor: 'yellow',
                 borderColor: 'green',
                 tension: 0.4,
@@ -68,7 +66,7 @@ function BarChar(props) {
                         {
                             label: false,
                             data: chartData,
-                            backgroundColor: 'yellow',
+                            backgroundColor: '#f86815',
                             borderColor: 'green',
                             tension: 0.4,
                             fill: true,

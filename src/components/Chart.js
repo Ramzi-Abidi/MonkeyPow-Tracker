@@ -21,25 +21,13 @@ function Chart(props) {
                 //label: "",
                 data: [50, 60, 70, 25],
                 backgroundColor: 'yellow',
-                /* borderColor: 'green',
+                borderColor: 'green',
                 tension: 0.4,
                 fill: true,
                 pointStyle: 'rect',
                 pointBorderColor: 'blue',
                 pointBackgroundColor: '#fff',
-                showLine: true, */
-
-                /* options: {
-                    scales: {
-                        yAxes: [{
-                            tricks: {
-                                beginAtZero: true,
-                                display: false,
-                            },
-                        },
-                        ],
-                    },
-                } */
+                showLine: true,
             },
         ]
     })
@@ -101,7 +89,7 @@ function Chart(props) {
                         {
                             label: "",
                             data: newInfected,
-                            backgroundColor: 'yellow',
+                            backgroundColor: '#f86815',
                             borderColor: 'green',
                             tension: 0.4,
                             fill: true,
@@ -131,7 +119,7 @@ function Chart(props) {
                         {
                             label: "",
                             data: totalInfected,
-                            backgroundColor: 'yellow',
+                            backgroundColor: '#f86815',
                             borderColor: 'green',
                             tension: 0.4,
                             fill: true,

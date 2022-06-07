@@ -3,9 +3,12 @@ import { useHistory } from 'react-router-dom';
 import BarChar from "./BarChar";
 
 const Table = () => {
+
   const [data, setData] = useState([]);
   const [sortedData, setSortedData] = useState(null);
+  const [verif, setVerif] = useState(false);
   const history = useHistory();
+
 
   const handleClickOn = (ch) => {
     console.log(ch)
@@ -13,20 +16,31 @@ const Table = () => {
   }
 
   const handleTotalInfected = () => {
-    let a = data.sort((a, b) => {
-      return b.Total_infected - a.Total_infected;   //asc
-    });
+    if (verif == false) {
 
-    console.log(a);
+      let a = data.sort((a, b) => {
+        return b.Total_infected - a.Total_infected;
+      });
 
-    if (a)
-      setSortedData(a);
+      console.log(a);
 
-    JSON.stringify(localStorage.setItem("sortedItems", a));
+      if (a)
+        setSortedData(a);
 
-    console.log(sortedData);
+    }
+    else {
+      let a = data.sort((a, b) => {
+        return a.Total_infected - b.Total_infected;
+      });
 
-    /*  *//*  window.location.reload(false); */
+
+      if (a)
+        setSortedData(a);
+
+    }
+
+    setVerif(!verif) ;
+
   }
 
 
@@ -55,19 +69,13 @@ const Table = () => {
         <tbody>
 
           {
-            sortedData ? (
-              sortedData.map((obj, i) => {
-                return (
-                  <tr> <td> {i} </td> <td className='active' onClick={(e) => handleClickOn(e.target.value) }> {obj.Country} </td> <td> {obj.New_infected}</td> <td> {obj.Total_infected} </td> <td> <BarChar name={obj.Country} /> </td> </tr>
-                )
-              })
-            )
+            data.map((obj, i) => {
+              return (
+                <tr> <td> {i} </td> <td className='active' onClick={(e) => handleClickOn(e.target.value)}> {obj.Country} </td> <td> {obj.New_infected}</td> <td> {obj.Total_infected} </td> <td> <BarChar name={obj.Country} /> </td> </tr>
+              )
+            })
 
-              : data.map((obj, i) => {
-                return (
-                  <tr> <td> {i} </td> <td className='active' onClick={() => handleClickOn(obj.Country)}> {obj.Country} </td> <td> {obj.New_infected}</td> <td> {obj.Total_infected} </td> <td> <BarChar name={obj.Country} /> </td> </tr>
-                )
-              })
+
           }
 
         </tbody>
