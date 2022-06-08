@@ -134,9 +134,11 @@
  }
 
  .second-section {
-   display: flex;
-
+  display: flex;
+  position: relative;
+  top: 27px;
  }
+
  .blue { color: #185875; }
  .yellow { color: #FFF842; }
  
@@ -177,7 +179,7 @@
  }
  
  .container {
-    overflow: hidden;
+/*     overflow: hidden; */
     max-width: 97%;
     padding: 5rem;
     margin: 0 auto;
@@ -202,7 +204,13 @@
  .container tr:nth-child(odd) {
      background-color: #151515;
  }
+.footerLinks {
+  font-size: 17px;
+  text-decoration: none;
+  color: inherit;
+  margin:0 .5rem ;
 
+}
 
  
  /* Background-color of the even rows */
@@ -270,16 +278,28 @@ li {
    cursor: pointer;
  }
 
+ .lightModeClass {
+   color:"#bdbdbd" ;
+ }
+
+
+
+ .darkModeClass {
+  color:"#4a5369" !important;
+ }
  .allRightsContainer {
    display: flex;
-   
+   align-items: center;
  }
  .allRights {
    text-align: center;
  }
 
  /*extra small*/
-
+ td {
+  border-left: 0;
+  border-right: 0;
+ }
 
 /*Small devices (landscape phones, less than 768px)*/
 @media (max-width: 767.98px) {
@@ -301,19 +321,15 @@ li {
     margin:0rem auto ;
     max-width: 100%;
   }
+
+  td.active {
+    font-weight: bold;
+  }
  }
 
-
-
-
  @media (max-width: 575.98px) { 
-
-/*   .react-witch {
-    font-size: 12px !important;
-  } */
-
   .container th h1,tr {
-    font-size: .6rem;
+    font-size: .65rem;
   }
   .First-title {
     font-size: 1rem;
@@ -321,11 +337,14 @@ li {
   }
   .First-title::before {
     top: 25px;
-    
   } 
 
+.container th {
+  padding:.18rem ;
+}
+
   .chart1,.chart2 {
-    width: 25rem !important;
+    width: 22rem !important;
   }
 
   .container {
@@ -341,9 +360,11 @@ li {
   }
 
   .container td.active:hover {
-    font-size: 18px;
+    font-size: 13px;
     transition: .5s;
   }
+
+
 }
 
 /*Large devices (desktops, less than 1200px)*/

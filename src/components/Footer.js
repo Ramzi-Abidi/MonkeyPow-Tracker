@@ -3,6 +3,8 @@ import "./footer.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFaceGrin, faFaceB } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom";
+
 
 const Footer = () => {
   return (
@@ -10,22 +12,23 @@ const Footer = () => {
       <div class="container-footer">
         <div class="the-row">
           <div class="footer-col">
-            <h4>MokeyPox</h4>
+            <h4>MPox.info</h4>
             <ul>
-              <li>Home</li>
-              <li>About</li>
+              <div className='allRightsContainer'>
+                <a href="https://github.com/ZakariaBouguira/MonkeyPox" target={"_blank"} className="footerLinks">
+                  <FontAwesomeIcon icon={faGithub} style={{ fontSize: "2rem", paddingLeft: "2px" }}>
+                  </FontAwesomeIcon>
+                </a>
+                <a href='https://github.com/ZakariaBouguira/MonkeyPox' target={"_blank"} className="footerLinks">Link To Data</a>
+              </div>
             </ul>
           </div>
 
           <div class="footer-col">
-            <h4>Social Media</h4>
             <div class="social-links">
-{/*               <Link to=""><FontAwesomeIcon icon={faFacebook} /></Link>
-              <Link to=""><FontAwesomeIcon icon={faInstagram} /></Link> */}
+              {/* <h3> All Rights Reserved </h3> */}
             </div>
-            <div className='allRightsContainer'>
-              <FontAwesomeIcon icon={faGithub} style={{fontSize:"2rem",paddingLeft:"2px"}}/>
-            </div>
+
           </div>
         </div>
       </div>
@@ -34,4 +37,4 @@ const Footer = () => {
   )
 }
 
-export default Footer ;
+export default Footer;
