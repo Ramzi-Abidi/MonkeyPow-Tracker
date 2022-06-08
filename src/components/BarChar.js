@@ -8,6 +8,8 @@ ChartJS.register(
 )
 
 function BarChar(props) {
+/*     console.log(props.name) ; */
+
 
     const dateConfirmation = [];
     const chartData = [];
@@ -51,7 +53,7 @@ function BarChar(props) {
             return res.json();
         })
             .then((allData) => {
-                console.log(allData);
+               /*  console.log(allData); */
                 const dateConfirmation = allData.map((obj) => {
                     return obj.Date_confirmation;
                 })
@@ -66,7 +68,7 @@ function BarChar(props) {
                         {
                             label: false,
                             data: chartData,
-                            backgroundColor: '#f86815',
+                            backgroundColor: '#CC1100',
                             borderColor: 'green',
                             tension: 0.4,
                             fill: true,
@@ -79,22 +81,17 @@ function BarChar(props) {
                         },
                     ]
                 })
-
-
-
                 return allData;
             })
             .catch((err) => {
                 console.log(err)
             })
-        console.log(dateConfirmation);
-        console.log(chartData);
-    }, [])
+    }, [props])
 
 
     return (
-        <div className="App" style={{ width: '250px', height: '7.5rem' }}>
-            <Bar data={data} options={{ scales: { y: { display: false }, x: { display: false } }, plugins: { legend: false } }} >Hello</Bar>
+        <div className="App" style={{ width: '180px'}}>
+            <Bar data={data} options={{ scales: { y: { display: false }, x: { display: false } }, plugins: { legend: false } }} ></Bar>
         </div>
     );
 }

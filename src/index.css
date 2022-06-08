@@ -9,18 +9,21 @@
    padding:0;
    margin:0;
  }
+
+
  tr {
   font-size: 1.5rem;
+
  }
  body {
-font-family: "Aktiv Grotesk","Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "segoe ui", Roboto, Helvetica, Arial, sans-serif;
    font-weight: 300;
    line-height: 1.42em;
    color:#A7A1AE;
-
  }
  .light {
-  background-color: #f4fbff;
+  /*background-color: #f4fbff;*/
+  background-color: rgb(240, 240, 240);
   width: 100%;
   height: 100%;
   transition: .9s;
@@ -28,8 +31,14 @@ font-family: "Aktiv Grotesk","Segoe UI",Helvetica,Arial,sans-serif,"Apple Color 
 
  .dark {
   /*background-color:#1F2739;*/
-  background-color: rgb(20 20 23);
-  transition: .8s;
+    /* background-color: #1F2739; */
+    background-color: rgb(20 20 23);
+    transition: .8s;
+    aspect-ratio: 100 / 29;
+/*     position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0; */
  }
 
  .lightMode {
@@ -51,7 +60,6 @@ font-family: "Aktiv Grotesk","Segoe UI",Helvetica,Arial,sans-serif,"Apple Color 
    line-height:1em;
    text-align: center;
    text-transform: capitalize;
-
    color: #4DC3FA;
  }
  
@@ -73,7 +81,7 @@ font-family: "Aktiv Grotesk","Segoe UI",Helvetica,Arial,sans-serif,"Apple Color 
  }
 
  .containerCharts {
-   height: 66rem;
+   height: 81rem;
   width: 100%;
   margin-top: 6rem;
   padding: 2rem 0 ;
@@ -83,14 +91,23 @@ font-family: "Aktiv Grotesk","Segoe UI",Helvetica,Arial,sans-serif,"Apple Color 
   align-items: center;
  }
 
-.chart1,.chart2 {
-  margin: 2.5rem 0;
+
+.chart1 {
+  margin-bottom: 4.5rem;
 }
 
+.chart1,.chart2 {
+  margin: 2.5rem 0;
+  width: 60rem;
+  height: 40rem ;
+}
+
+
 .chart-title {
-  margin-bottom: -2rem;
-  text-transform: capitalize;
-  color: #616161;
+    margin-bottom: -2rem;
+    text-transform: capitalize;
+    color: #616161;
+    font-size: 23.5px;
 }
 
 
@@ -128,21 +145,32 @@ font-family: "Aktiv Grotesk","Segoe UI",Helvetica,Arial,sans-serif,"Apple Color 
      font-size: 1em;
    text-align: left;
    color: #dbdbdb;
+   cursor: pointer;
+ }
+
+ .initial {
+  color: #dbdbdb;
  }
  
+/*  .loadingBox {
+   position: absolute;
+    left:0
+ } */
  .container td {
      font-weight: normal;
      font-size: 1em;
-   -webkit-box-shadow: 0 2px 2px -2px #0E1119;
+/*    -webkit-box-shadow: 0 2px 2px -2px #0E1119;
       -moz-box-shadow: 0 2px 2px -2px #0E1119;
-           box-shadow: 0 2px 2px -2px #0E1119;
- }
+           box-shadow: 0 2px 2px -2px #0E1119; */
+           -webkit-box-shadow: 0 2px 2px -2px #b6b6b6;
+           -moz-box-shadow: 0 2px 2px -2px #b6b6b6;
+                box-shadow: 0 2px 2px -2px #b6b6b6;
+          }
 
  .container td.active {
   cursor: pointer;
  }
 
- 
  .container td.active:hover {
    font-size: 28px;
    transition: .5s;
@@ -150,21 +178,32 @@ font-family: "Aktiv Grotesk","Segoe UI",Helvetica,Arial,sans-serif,"Apple Color 
  
  .container {
     overflow: hidden;
-    max-width: 95%;
+    max-width: 97%;
     padding: 5rem;
-    display: table;
     margin: 0 auto;
     padding: 3rem 0.5rem;
  }
  
  .container td, .container th {
-     padding:1rem;
+    padding:1rem;
  }
  
+.lightModeTr:nth-child(even) {
+  background: #f7f7f7 !important;
+}
+
+ .lightModeTr {
+  background-color: #fff !important;
+  color: #333;
+}
+
+
  /* Background-color of the odd rows */
  .container tr:nth-child(odd) {
      background-color: #151515;
  }
+
+
  
  /* Background-color of the even rows */
  .container tr:nth-child(even) {
@@ -174,6 +213,12 @@ font-family: "Aktiv Grotesk","Segoe UI",Helvetica,Arial,sans-serif,"Apple Color 
   display: flex;
 
 }
+
+
+li {
+  list-style: none;
+}
+
 
  .First-title {
   text-transform: capitalize;
@@ -203,7 +248,7 @@ font-family: "Aktiv Grotesk","Segoe UI",Helvetica,Arial,sans-serif,"Apple Color 
  .table-container {
   margin-top: 3.5rem;
  }
- .container td:first-child { color: #FB667A; }
+/*  .container td:first-child { color: #FB667A; } */
  
  .container tr:hover {
     background-color: rgb(31, 31, 31);
@@ -212,20 +257,14 @@ font-family: "Aktiv Grotesk","Segoe UI",Helvetica,Arial,sans-serif,"Apple Color 
            box-shadow: 0 6px 6px -6px #0E1119;
  }
 
- /* .container td:hover {
+  .lightModeH1{
+    color: #333 !important ;
+  }
 
-   transition-delay: 0s;
-     transition-duration: 0.4s;
-     transition-property: all;
-   transition-timing-function: line;
+ .titles h1 {
+/*   background:#282828 ; */
+  color: #333;
  }
-  */
-
- .titles {
-  background:#282828 ;
-  
- }
-
 
  .titles h1 {
    cursor: pointer;
@@ -238,3 +277,76 @@ font-family: "Aktiv Grotesk","Segoe UI",Helvetica,Arial,sans-serif,"Apple Color 
  .allRights {
    text-align: center;
  }
+
+ /*extra small*/
+
+
+/*Small devices (landscape phones, less than 768px)*/
+@media (max-width: 767.98px) {
+  .First-title {
+    font-size: 1.5rem;
+  }
+  .container th h1,tr {
+    font-size: .9rem;
+  }
+  .chart1,
+  .chart2 {
+    width: 31rem !important;
+  }
+  .containerCharts {
+    height: 55rem;
+  }
+  .container {
+    padding:1rem ;
+    margin:0rem auto ;
+    max-width: 100%;
+  }
+ }
+
+
+
+
+ @media (max-width: 575.98px) { 
+
+/*   .react-witch {
+    font-size: 12px !important;
+  } */
+
+  .container th h1,tr {
+    font-size: .6rem;
+  }
+  .First-title {
+    font-size: 1rem;
+    margin-top: 2rem;
+  }
+  .First-title::before {
+    top: 25px;
+    
+  } 
+
+  .chart1,.chart2 {
+    width: 25rem !important;
+  }
+
+  .container {
+    padding:0;
+  }
+
+}
+
+/* Medium devices (tablets, less than 992px)*/
+@media (max-width: 991.98px) {
+  .chart1,.chart2 {
+    width: 42rem;
+  }
+
+  .container td.active:hover {
+    font-size: 18px;
+    transition: .5s;
+  }
+}
+
+/*Large devices (desktops, less than 1200px)*/
+@media (max-width: 1199.98px) {
+
+}

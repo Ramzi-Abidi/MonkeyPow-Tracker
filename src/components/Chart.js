@@ -41,9 +41,9 @@ function Chart(props) {
                 borderColor: 'green',
                 tension: 0.4,
                 fill: true,
-                pointStyle: 'rect',
-                pointBorderColor: 'blue',
-                pointBackgroundColor: '#fff',
+                /*  pointStyle: 'rect', */
+                /* pointBorderColor: 'blue',
+                pointBackgroundColor: '#fff', */
                 showLine: true,
 
                 options: {
@@ -89,7 +89,7 @@ function Chart(props) {
                         {
                             label: "",
                             data: newInfected,
-                            backgroundColor: '#f86815',
+                            backgroundColor: '#CC1100',
                             borderColor: 'green',
                             tension: 0.4,
                             fill: true,
@@ -119,15 +119,17 @@ function Chart(props) {
                         {
                             label: "",
                             data: totalInfected,
-                            backgroundColor: '#f86815',
-                            borderColor: 'green',
+                            backgroundColor: '#616161',
+                            borderColor: '#CC1100',
                             tension: 0.4,
                             fill: true,
-                            pointStyle: 'rect',
-                            pointBorderColor: 'blue',
-                            pointBackgroundColor: '#fff',
-                            showLine: true,
+                            PointElement: false,
 
+                            /* pointStyle: 'rect', */
+                            /* pointBorderColor: false, */
+                            /* pointBackgroundColor: '#fff', */
+                            showLine: true,
+                            borderWidth: 5,
                             options: {
                                 scales: {
                                     yAxes: [{
@@ -154,14 +156,20 @@ function Chart(props) {
     return (
         <div className='containerCharts'>
             <h3 className='chart-title'> new Infected </h3>
-            <div className="chart1" style={{ width: '50rem', height: '35rem' }}>
+            <div className="chart1" >
                 <Bar data={data} options={{ plugins: { legend: false } }} ></Bar>
             </div>
 
             <h3 className='chart-title'> total Infected </h3>
 
-            <div className="chart2" style={{ width: '50rem', height: '35rem' }} >
-                <Line data={data1} options={{ plugins: { legend: false } }}></Line>
+            <div className="chart2"  >
+                <Line data={data1} options={{
+                    plugins: { legend: false }, elements: {
+                        point: {
+                            radius: 0
+                        }
+                    }
+                }}></Line>
             </div>
         </div>
     );

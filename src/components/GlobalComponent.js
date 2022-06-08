@@ -1,16 +1,14 @@
-import { useState } from "react";
-import Header from "./Header"
 import Table from "./Table";
 import Chart from "./Chart";
 
-function App() {
+function GlobalComponent({ theme }) {
 
     return (
         <>
             <Chart />
-            <Table />
+            <Table theme={theme} />
         </>
     )
 }
 
-export default App
+export default GlobalComponent;

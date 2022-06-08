@@ -14,7 +14,7 @@ const Header = ({ theme, handleSwitch }) => {
         <header className="header">
             <h1 className={theme === "dark" ? "First-title" : "First-title lightMode"} onClick={handleClick}> monkeyPox tracker </h1>
             <div className="second-section">
-                <ReactSwitch onChange={handleSwitch} checked={theme === "dark"} />
+                <ReactSwitch onChange={handleSwitch} checked={theme === "dark"}   />
                 {
                     theme === "dark" ? <div className="img-container">
                         <img src='../images/moon.png' className="darkModeImage" />

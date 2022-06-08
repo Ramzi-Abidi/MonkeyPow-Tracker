@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Line, Bar } from 'react-chartjs-2';
+import { useParams } from 'react-router-dom';
 
 import { Chart as ChartJS, Title, Tooltip, LineElement, Legend, CategoryScale, LinearScale, PointElement, Filler, BarElement } from 'chart.js';
 import CountryTable from './CountryTable';
@@ -8,10 +9,14 @@ ChartJS.register(
     CategoryScale, LinearScale, PointElement, Filler, BarElement
 )
 
-const Countryscreen = (props) => {
+const Countryscreen = ({ theme }) => {
     const [countryData, setcountryData] = useState();
+    const [loading, setLoading] = useState(false);
 
-    let countryName = props.match.params.id;
+    //console.log(props.theme) ;
+    console.log(useParams());
+
+    let countryName = useParams().id;
 
     const [data, setData] = useState({
         labels: [],
@@ -20,6 +25,7 @@ const Countryscreen = (props) => {
                 //label: "",
                 data: [50, 60, 70, 25],
                 backgroundColor: 'yellow',
+
                 /* borderColor: 'green',
                 tension: 0.4,
                 fill: true,
@@ -52,9 +58,11 @@ const Countryscreen = (props) => {
                 borderColor: 'green',
                 tension: 0.4,
                 fill: true,
-                pointStyle: 'rect',
-                pointBorderColor: 'blue',
-                pointBackgroundColor: '#fff',
+                borderWidth: false,
+
+                /*   pointStyle: 'rect',
+                  pointBorderColor: 'blue',
+                  pointBackgroundColor: '#fff', */
                 showLine: true,
 
                 options: {
@@ -77,6 +85,8 @@ const Countryscreen = (props) => {
         let url1 = `https://raw.githubusercontent.com/ZakariaBouguira/MonkeyPox/master/data/by_country/monkeypox_time_series_${countryName}.json`;
 
         fetch(url1).then((res) => {
+            if (res)
+                setLoading(true);
             return res.json();
         })
             .then((allData) => {
@@ -94,6 +104,7 @@ const Countryscreen = (props) => {
                 const totalInfected = allData.map((obj) => {
                     return obj.Total_infected;
                 })
+                setLoading(false);
 
                 setData({
                     ...data,
@@ -102,13 +113,14 @@ const Countryscreen = (props) => {
                         {
                             label: "",
                             data: newInfected,
-                            backgroundColor: 'yellow',
+                            backgroundColor: '#cc1100',
                             borderColor: 'green',
                             tension: 0.4,
                             fill: true,
-                            pointStyle: 'rect',
-                            pointBorderColor: 'blue',
-                            pointBackgroundColor: '#fff',
+
+                            /*    pointStyle: 'rect',
+                               pointBorderColor: 'blue',
+                               pointBackgroundColor: '#fff', */
                             showLine: true,
 
                         },
@@ -122,13 +134,15 @@ const Countryscreen = (props) => {
                         {
                             label: "",
                             data: totalInfected,
-                            backgroundColor: 'yellow',
-                            borderColor: 'green',
+                            backgroundColor: '#616161',
+                            borderColor: '#CC1100',
                             tension: 0.4,
                             fill: true,
-                            pointStyle: 'rect',
-                            pointBorderColor: 'blue',
-                            pointBackgroundColor: '#fff',
+                            borderWidth: 5,
+
+                            /*                             pointStyle: 'rect',
+                                                        pointBorderColor: 'blue',
+                                                        pointBackgroundColor: '#fff', */
                             showLine: true,
 
                             options: {
@@ -159,16 +173,22 @@ const Countryscreen = (props) => {
             <div className='containerCharts'>
                 <h3 className='chart-title'> new Infected </h3>
 
-                <div className="chart1" style={{ width: '50rem', height: '35rem' }}>
+                <div className="chart1" >
                     <Bar data={data} options={{ plugins: { legend: false } }}></Bar>
                 </div>
-                <h3 className='chart-title'> total Infected </h3>
+                <h3 className='chart-title' style={{ marginTop: "4rem" }}> total Infected </h3>
 
-                <div className="chart2" style={{ width: '50rem', height: '35rem' }}>
-                    <Line data={data1} options={{ plugins: { legend: false } }}></Line>
+                <div className="chart2" style={{ marginTop: "2.5rem" }}>
+                    <Line data={data1} options={{
+                        plugins: { legend: false }, elements: {
+                            point: {
+                                radius: 0
+                            }
+                        }
+                    }}></Line>
                 </div>
             </div>
-            <CountryTable countryData={countryData} countryName={countryName} />
+            <CountryTable countryData={countryData} countryName={countryName} theme={theme} loading={loading} />
         </>
     )
 }
