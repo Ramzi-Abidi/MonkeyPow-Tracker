@@ -309,6 +309,9 @@ li {
   .container th h1,tr {
     font-size: .9rem;
   }
+  .container td {
+    padding:2px ;
+  }
   .chart1,
   .chart2 {
     width: 31rem !important;
