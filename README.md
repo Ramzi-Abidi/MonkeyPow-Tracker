@@ -21,4 +21,7 @@ Before you begin, ensure you have met the following requirements:
 
 ### Installation
 
-Provide step-by-step instructions on how to install and run your typing speed game locally.
+```
+npm install
+npm start
+```
